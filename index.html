@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
-    <title>Kim Mendoza - Student</title>
+    <title>Personal Website</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
@@ -10,20 +10,20 @@
         <h1>Kim Mendoza</h1>
         <p class="title">I'm a <span class="typewriter-text"></span><span class="cursor">|</span></p>
         <script> // Typewriter effect
-            const words = ["Student", "Video Editor", "Photo Editor"];
+            let words = ["Student", "Future Quant Developer", "Video Editor", "Photo Editor", "Photographer", "Videographer", "3D Modeler"];
             let wordIndex = 0;
             let charIndex = 0;
             let isDeleting = false;
-            const typeSpeed = 100; 
-            const deleteSpeed = 50; 
-            const waitTime = 2000; 
+            let typeSpeed = 100; 
+            let deleteSpeed = 50; 
+            let waitTime = 2000; 
             
             function typeWriter() {
-                const currentWord = words[wordIndex];
-                const displayElement = document.querySelector('.typewriter-text');
+                let currentWord = words[wordIndex];
+                let display = document.querySelector('.typewriter-text');
                 
                 if (isDeleting) {
-                    displayElement.textContent = currentWord.substring(0, charIndex - 1);
+                    display.textContent = currentWord.substring(0, charIndex - 1);
                     charIndex--;
                     
                     if (charIndex === 0) {
@@ -33,7 +33,7 @@
                         return;
                     }
                 } else {
-                    displayElement.textContent = currentWord.substring(0, charIndex + 1);
+                    display.textContent = currentWord.substring(0, charIndex + 1);
                     charIndex++;
                     
                     if (charIndex === currentWord.length) {
@@ -45,11 +45,13 @@
                 
                 setTimeout(typeWriter, isDeleting ? deleteSpeed : typeSpeed);
             }
-            
+
             window.onload = function() {
                 setTimeout(typeWriter, 1000); 
             };
         </script>
+
+
     </div>
 </body>
 </html>
