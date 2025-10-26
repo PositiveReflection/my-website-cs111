@@ -16,13 +16,18 @@ body {
 
 /* Profile Card */
 .profile-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 40px;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
     max-width: 500px;
     width: 90%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(230, 240, 255, 0.7);
+    outline: 4px solid rgb(71, 96, 125);
 }
 
 /* Profile Image */
