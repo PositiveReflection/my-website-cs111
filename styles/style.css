@@ -29,7 +29,7 @@ body {
 .profile-img {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
+    border-radius: 100%;
     object-fit: cover;
     margin-bottom: 20px;
     border: 5px solid #f0f0f0;
@@ -47,6 +47,31 @@ h1 {
     color: #7f8c8d;
     font-size: 1.2rem;
     margin-bottom: 30px;
+    min-height: 1.5em; /* Ensure consistent height while typing */
+}
+
+.typewriter-text {
+    color: #3498db; /* Blue color for the changing text */
+    font-weight: 600; /* Slightly bolder */
+    position: relative;
+}
+
+.cursor {
+    color: #3498db;
+    animation: blink 1s step-end infinite;
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+.cursor {
+    color: #2c3e50;
+    animation: blink 1s step-end infinite;
+    font-weight: bold;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 

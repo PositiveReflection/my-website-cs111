@@ -8,7 +8,48 @@
     <div class="profile-card">
         <img src="assets/newpfp3.png" alt="Kim Mendoza" class="profile-img">
         <h1>Kim Mendoza</h1>
-        <p class="title">I'm Student</p>
+        <p class="title">I'm a <span class="typewriter-text"></span><span class="cursor">|</span></p>
+        <script> // Typewriter effect
+            const words = ["Student", "Video Editor", "Photo Editor"];
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            const typeSpeed = 100; 
+            const deleteSpeed = 50; 
+            const waitTime = 2000; 
+            
+            function typeWriter() {
+                const currentWord = words[wordIndex];
+                const displayElement = document.querySelector('.typewriter-text');
+                
+                if (isDeleting) {
+                    displayElement.textContent = currentWord.substring(0, charIndex - 1);
+                    charIndex--;
+                    
+                    if (charIndex === 0) {
+                        isDeleting = false;
+                        wordIndex = (wordIndex + 1) % words.length;
+                        setTimeout(typeWriter, 500);
+                        return;
+                    }
+                } else {
+                    displayElement.textContent = currentWord.substring(0, charIndex + 1);
+                    charIndex++;
+                    
+                    if (charIndex === currentWord.length) {
+                        isDeleting = true;
+                        setTimeout(typeWriter, waitTime)
+                        return;
+                    }
+                }
+                
+                setTimeout(typeWriter, isDeleting ? deleteSpeed : typeSpeed);
+            }
+            
+            window.onload = function() {
+                setTimeout(typeWriter, 1000); 
+            };
+        </script>
     </div>
 </body>
 </html>
