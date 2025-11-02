@@ -20,9 +20,9 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 1200px; /* Increased max-width to accommodate wider gallery */
+    max-width: 1200px;
     padding: 20px;
-    padding-bottom: 100px; /* Add padding at the bottom to prevent content from being hidden behind the fixed nav */
+    padding-bottom: 100px;
     box-sizing: border-box;
     margin: 0 auto;
 }
@@ -120,11 +120,11 @@ body {
 
 /* Gallery Card - Wider version */
 .gallery-card {
-    width: calc(100% - 40px); /* Full width minus 20px on each side */
+    width: calc(100% - 40px);
     max-width: 100%;
-    min-height: 600px; /* Taller height for gallery content */
-    padding: 30px; /* Slightly less padding to allow more content */
-    margin: 0 20px; /* 20px margin on both sides */
+    min-height: 600px;
+    padding: 30px;
+    margin: 0 20px;
 }
 
 /* Profile Image */
@@ -149,12 +149,12 @@ h1 {
     color: #7f8c8d;
     font-size: 1.2rem;
     margin-bottom: 30px;
-    min-height: 1.5em; /* Ensure consistent height while typing */
+    min-height: 1.5em;
 }
 
 .typewriter-text {
-    color: #3498db; /* Blue color for the changing text */
-    font-weight: 600; /* Slightly bolder */
+    color: #3498db;
+    font-weight: 600;
     position: relative;
 }
 
@@ -273,7 +273,7 @@ h1 {
 @media (max-width: 500px) {
     .profile-card, .gallery-card {
         padding: 20px 15px;
-        width: calc(100% - 30px); /* Slightly smaller on mobile */
+        width: calc(100% - 30px);
         margin: 0 15px;
         min-height: auto;
     }
