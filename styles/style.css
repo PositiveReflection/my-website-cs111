@@ -91,7 +91,7 @@ body {
 
 .gallery-image:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgb(86, 144, 195);
+    box-shadow: 0 4px 8px #47707d;
 }
 
 .album-title {
