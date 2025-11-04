@@ -20,16 +20,89 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 600px;
+    max-width: 1200px;
     padding: 20px;
-    padding-bottom: 100px; /* Add padding at the bottom to prevent content from being hidden behind the fixed nav */
+    padding-bottom: 100px;
     box-sizing: border-box;
     margin: 0 auto;
 }
 
+/* Gallery Styles */
+.gallery-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.album-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-bottom: 2px solid #47707d;
+}
+
+.album-tab {
+    padding: 8px 16px;
+    background-color: rgba(71, 112, 125, 0.2);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.album-tab:hover, .album-tab:focus {
+    background-color: #47707d;
+    color: white;
+}
+
+.album-tab.active {
+    background-color: #47707d;
+    color: white;
+}
+
+.album-content {
+    display: none;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px 0;
+    overflow-y: auto;
+    max-height: 500px;
+    justify-content: center;
+}
+
+.album-content.active {
+    display: flex;
+}
+
+.gallery-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    border: 2px solid rgba(71, 112, 125, 0.3);
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgb(86, 144, 195);
+}
+
+.album-title {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+    color: #2c3e50;
+}
+
 /* Profile Card */
-.profile-card {
-    background: rgba(255, 255, 255, 0.7);
+.profile-card, .gallery-card {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding: 40px;
@@ -37,10 +110,20 @@ body {
     text-align: center;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
     width: 100%;
+    max-width: 600px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     background-color: rgba(230, 240, 255, 0.7);
     outline: 4px solid rgb(71, 96, 125);
     box-sizing: border-box;
+}
+
+/* Gallery Card - Wider version */
+.gallery-card {
+    width: calc(100% - 40px);
+    max-width: 100%;
+    min-height: 600px;
+    padding: 30px;
+    margin: 0 20px;
 }
 
 /* Profile Image */
@@ -65,26 +148,20 @@ h1 {
     color: #7f8c8d;
     font-size: 1.2rem;
     margin-bottom: 30px;
-    min-height: 1.5em; /* Ensure consistent height while typing */
+    min-height: 1.5em;
 }
 
 .typewriter-text {
-    color: #3498db; /* Blue color for the changing text */
-    font-weight: 600; /* Slightly bolder */
-    position: relative;
-}
-
-.cursor {
     color: #3498db;
-    animation: blink 1s step-end infinite;
-    font-weight: bold;
-    margin-left: 2px;
+    font-weight: 600;
+    position: relative;
 }
 
 .cursor {
     color: #2c3e50;
     animation: blink 1s step-end infinite;
     font-weight: bold;
+    margin-left: 2px;
 }
 
 @keyframes blink {
@@ -98,7 +175,6 @@ h1 {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding: 10px 20px;
@@ -143,11 +219,6 @@ h1 {
     margin-bottom: 5px;
 }
 
-.nav-item span {
-    font-size: 12px;
-    font-weight: bold;
-}
-
 .nav-item:hover img {
     transform: scale(1.2);
 }
@@ -158,10 +229,40 @@ h1 {
     margin-top: 5px;
 }
 
+.hobbies-list {
+    padding-left: 25px;
+    margin: 0 0 0 20px;
+}
+
+.hobbies-list li {
+    padding-left: 5px;
+    margin-bottom: 5px;
+}
+
+
+.info-table th {
+    text-align: right;
+    padding-right: 15px;
+    font-weight: 600;
+}
+
+.info-table td {
+    padding-left: 50px;
+}
+
+.education-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0 15px -20px;
+}
+
 /* For smaller screens */
 @media (max-width: 500px) {
-    .profile-card {
-        padding: 30px 20px;
+    .profile-card, .gallery-card {
+        padding: 20px 15px;
+        width: calc(100% - 30px);
+        margin: 0 15px;
+        min-height: auto;
     }
     
     h1 {
