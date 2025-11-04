@@ -2,18 +2,19 @@
 <html>
 <head>
     <title>Personal Website</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style.css" type="text/css">
 </head>
 <body>
     <div class="container">
         <div class="profile-card">
             <img src="assets/newpfp3.png" alt="Kim Mendoza" class="profile-img">
             <h1>Kim Mendoza</h1>
-            <p class="title">I'm a <span class="typewriter-text"></span><span class="cursor">|</span></p>
+            <p class="title">I'm a <span class="typewriter-text">&nbsp;</span><span class="cursor">|</span></p>
         </div>
         
         <div class="nav-container">
-            <nav class="main-nav">
+            <div class="main-nav">
+                <h2 class="visually-hidden">Main navigation</h2>
                 <a href="index.html" class="nav-item" title="Home">
                     <img src="assets/home.png" alt="Home">
                     <span>Home</span>
@@ -30,10 +31,10 @@
                     <img src="assets/more.png" alt="Hobbies">
                     <span>Hobbies</span>
                 </a>
-            </nav>
+            </div>
         </div>
 
-        <script> // Typewriter effect
+        <script type="text/javascript"> // Typewriter effect
             let words = ["Student", "Future Quant Developer", "Video Editor", "Photo Editor", "Photographer", "Videographer", "3D Modeler"];
             let wordIndex = 0;
             let charIndex = 0;
