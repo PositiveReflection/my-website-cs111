@@ -94,6 +94,30 @@ body {
     box-shadow: 0 4px 8px #47707d;
 }
 
+.hobby-card {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    border: 2px solid rgba(71, 112, 125, 0.3);
+    background-color: rgba(71, 112, 125, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 15px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.hobby-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px #47707d;
+}
+
 .album-title {
     width: 100%;
     text-align: center;
